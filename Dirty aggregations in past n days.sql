@@ -4,7 +4,10 @@ DECLARE @Days AS int
 SET @Days = 7
 SELECT DS.DatasetDefaultName,
 	CASE SDAH.AggregationTypeId
-		WHEN 0 THEN 'Raw' WHEN 20 THEN 'Hourly' WHEN 30 THEN 'Daily' ELSE 'Unknown'
+		WHEN 0 THEN 'Raw'
+		WHEN 20 THEN 'Hourly'
+		WHEN 30 THEN 'Daily'
+		ELSE 'Unknown'
 	END AS Type,
     SDAH.AggregationDateTime,
     DATEADD(HH, (datediff(HH, getutcdate(), getdate())), SDAH.AggregationDateTime) AS [LocalTime],
