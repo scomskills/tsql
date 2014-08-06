@@ -1,4 +1,4 @@
 tsql
 ====
 
-SQL queries for System Center Operations Manager (TSQL)
+SQL queries and procedures for System Center Operations Manager (TSQL)
