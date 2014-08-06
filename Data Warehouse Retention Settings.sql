@@ -1,7 +1,12 @@
 /*Data Warehouse retention settings*/
 USE OperationsManagerDW
 SELECT Dataset.DatasetDefaultName AS Dataset, StandardDatasetAggregation.MaxDataAgeDays AS Days,
-	CASE StandardDatasetAggregation.AggregationTypeId WHEN 0 THEN 'Raw' WHEN 20 THEN 'Hourly' WHEN 30 THEN 'Daily' ELSE 'Unknown' END AS Type,
+	CASE StandardDatasetAggregation.AggregationTypeId
+		WHEN 0 THEN 'Raw'
+		WHEN 20 THEN 'Hourly'
+		WHEN 30 THEN 'Daily'
+		ELSE 'Unknown'
+	END AS Type,
 	StandardDatasetAggregation.AggregationIntervalDurationMinutes AS AggInterval, StandardDatasetAggregation.GroomingIntervalMinutes AS GroomInterval,
 	StandardDatasetAggregation.MaxRowsToGroom, StandardDatasetAggregation.BuildAggregationStoredProcedureName AS SPROC
 FROM  Dataset INNER JOIN
