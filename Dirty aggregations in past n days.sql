@@ -1,4 +1,4 @@
-/*Return all dirty aggregations in past N days.
+/*Dirty aggregations in past N days.
 Update Days variable to desired number of days to go back.*/
 DECLARE @Days AS int
 SET @Days = 7
